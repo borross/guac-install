@@ -15,7 +15,7 @@ fi
 
 # Version number of Guacamole to install
 # Homepage ~ https://guacamole.apache.org/releases/
-GUACVERSION="1.5.5"
+GUACVERSION=$(curl --silent https://guacamole.apache.org/ | grep 'latest-release' | awk '{print $2}' | cut -d "/" -f 3)
 
 # Latest Version of MySQL Connector/J if manual install is required (if libmariadb-java/libmysql-java is not available via apt)
 # Homepage ~ https://dev.mysql.com/downloads/connector/j/
